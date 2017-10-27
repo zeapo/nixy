@@ -34,6 +34,14 @@ type PortDefinitions struct {
 	Labels   map[string]string
 }
 
+// PortMapping struct
+type PortMapping struct {
+	ContainerPort	int64
+	HostPort		int64
+	Protocol	    string
+	Labels   map[string]string
+}
+
 // App struct
 type App struct {
 	Tasks           []Task
@@ -41,6 +49,7 @@ type App struct {
 	Env             map[string]string
 	Hosts           []string
 	PortDefinitions []PortDefinitions
+	PortMappings	[]PortMapping
 }
 
 // Config struct used by the template engine
